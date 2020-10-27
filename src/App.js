@@ -21,13 +21,15 @@ function App() {
   // Function to get dogs via API
   const getCostumes = () => {
     fetch(url + "/costumes")
-    .then(response => response.json())
     .then(data => {
-      console.log(data)
-      setState(data)
-    })
+      return data.json()},
+      err => console.log(err))
+      .then(parsedData => setState({
+          ...state,
+          costumes: parsedData
+      }),
+      err => console.log(err))
   }
-
   
   //useEffect to do initial call
   React.useEffect(() => {
@@ -81,11 +83,11 @@ function App() {
   return (
     <div className="App">
       <h1>HALLOWEEN COSTUMES</h1>
-       <hr />
+       {/* <hr /> */}
 
 
       {/* Route for path='/' Testing */}
-      {/* <div>
+      <div>
         {state.costumes.map(costume => (
           <article key={costume._id}>
             <img src={costume.img}/>
@@ -93,7 +95,7 @@ function App() {
             <h3>{costume.price}</h3>
           </article>
         ))}
-      </div> */}
+      </div>
 
 
 
