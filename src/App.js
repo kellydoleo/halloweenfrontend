@@ -4,31 +4,19 @@ import { Route, Link, Switch } from "react-router-dom";
 import Display from "./Display";
 import Form from "./Form";
 
-
-
-
-function App() {
-//   //URL Variable - NEEDS TO BE UPDATED
   const url = "http://localhost:3003"  //Update to a herokuapp.com
   console.log('Current Base URL:', url);
 
-  fetch(url + '/costumes')
-  .then(data => {
-    return data.json()},
-    err => console.log(err))
-  .then(parsedData => console.log(parsedData),
-    err => console.log(err))
+function App() {
+//   //URL Variable - NEEDS TO BE UPDATED
+
 
   //state to hold API  
-  const emptyCostume = {
-    name: '',
-    price: '',
-    img: '',
-    type: []
-  };
+   const [state, setState] = React.useState({
+    costumes: []
+  })
 
-  //selected dog state to edit
-  const [costume, setCostume] = React.useState(emptyCostume)
+
 
   // Function to get dogs via API
   const getCostumes = () => {
@@ -36,7 +24,7 @@ function App() {
     .then(response => response.json())
     .then(data => {
       console.log(data)
-      setCostume(data)
+      setState(data)
     })
   }
 
@@ -44,7 +32,19 @@ function App() {
   //useEffect to do initial call
   React.useEffect(() => {
     getCostumes()
+    // console.log(state)
   }, [])
+
+
+// const emptyDog = {
+//   name: "",
+//   age: 0,
+//   img: ""
+// };
+
+// //selected dog state to edit
+// const [selectedDog, setSelectedDog] = React.useState(emptyDog)
+
 
 // //handle to create dogs
 // const handleCreate = (newDog) => {
@@ -77,19 +77,39 @@ function App() {
 //     method: 'delete'
 //   }).then(respnse => getDogs())
 // }
+
   return (
     <div className="App">
       <h1>HALLOWEEN COSTUMES</h1>
        <hr />
 
 
+      {/* Route for path='/' Testing */}
+      {/* <div>
+        {state.costumes.map(costume => (
+          <article key={costume._id}>
+            <img src={costume.img}/>
+            <h1>{costume.name}</h1>
+            <h3>{costume.price}</h3>
+          </article>
+        ))}
+      </div> */}
+
+
+
        {/* <Link to="/create">
 //         <button>Add Dog</button>
 //       </Link>
 //       <main>
-//         <Switch>
-//           <Route exact path="/" render={(rp) => <Display selectDog={selectDog}{...rp} dogs = {dogs} deleteDog={deleteDog}/>} />
-//           <Route
+//         <Switch>*/}
+          {/* <Route exact path="/" render={ (rp) => 
+            <Display 
+              costumes = {costumes} 
+              selectDog={selectDog}{...rp} 
+              deleteDog={deleteDog}
+            />} 
+          /> */}
+           {/*<Route
 //             exact
 //             path="/create"
 //             render={(rp) => (

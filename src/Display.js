@@ -1,29 +1,30 @@
 import React from "react";
 
 const Display = (props) => {
-  const {dogs} = props
-  const loaded = () => (
+  const {costumes} = props
+  return (
+  // const loaded = () => (
     <div style={{textAlign: 'center'}}>
-      {dogs.map((dog) => (
-        <article key={dog._id}>
-          <img src={dog.img}/>
-          <h1>{dog.name}</h1>
-          <h3>{dog.age}</h3>
-          <button onClick ={() => {
+      {costumes.map((costume) => (
+        <article key={costume._id}>
+          <img src={costume.img}/>
+          <h1>{costume.name}</h1>
+          <h3>{costume.price}</h3>
+          {/* <button onClick ={() => {
             props.selectDog(dog)
             props.history.push('/edit')
             }}>Edit</button>
             <button onClick ={() => {
             props.deleteDog(dog)
-            }}>Delete</button>
+            }}>Delete</button> */}
         </article>
       ))}
     </div>
   )
 
-  const loading = <h1>Loading...</h1>
+  // const loading = <h1>Loading...</h1>
 
-  return dogs.length > 0 ? loaded(): loading
+  // return costumes.length > 0 ? loaded(): loading
 };
 
 export default Display;
