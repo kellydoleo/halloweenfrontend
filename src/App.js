@@ -30,7 +30,7 @@ function App() {
       }),
       err => console.log(err))
   }
-  
+
   //useEffect to do initial call
   React.useEffect(() => {
     getCostumes()
@@ -83,34 +83,20 @@ function App() {
   return (
     <div className="App">
       <h1>HALLOWEEN COSTUMES</h1>
-       {/* <hr /> */}
-
-
-      {/* Route for path='/' Testing */}
-      <div>
-        {state.costumes.map(costume => (
-          <article key={costume._id}>
-            <img src={costume.img}/>
-            <h1>{costume.name}</h1>
-            <h3>{costume.price}</h3>
-          </article>
-        ))}
-      </div>
-
-
+       <hr />
 
        {/* <Link to="/create">
 //         <button>Add Dog</button>
 //       </Link>
 //       <main>
 //         <Switch>*/}
-          {/* <Route exact path="/" render={ (rp) => 
+          <Route exact path="/" render={ (rp) => 
             <Display 
-              costumes = {costumes} 
-              selectDog={selectDog}{...rp} 
-              deleteDog={deleteDog}
+              costumes = {state.costumes} 
+              // selectDog={selectDog}{...rp} 
+              // deleteDog={deleteDog}
             />} 
-          /> */}
+          />
            {/*<Route
 //             exact
 //             path="/create"
