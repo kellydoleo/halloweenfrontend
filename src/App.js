@@ -1,8 +1,9 @@
 import React from "react";
 import "./App.css";
-import { Route, Switch } from "react-router-dom";
+import { Route, Link, Switch } from "react-router-dom";
 import Display from "./Display";
 import FormOne from "./Form";
+import { Button } from 'reactstrap'
 
 
 function App() {
@@ -84,6 +85,9 @@ const deleteCostume = (costume) => {
 
        
        <main>
+       <Link to="/create">
+         <Button>Add Costume</Button>
+       </Link>
          <Switch>
           <Route exact path="/" render={ (rp) => 
             <Display 
