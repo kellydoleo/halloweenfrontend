@@ -1,8 +1,9 @@
 import React from "react";
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap'
 
-const Form = (props) => {
+const FormOne = (props) => {
   //STATE FOR THE FORM
-  const [formData, setFormData] = React.useState(props.dog);
+  const [formData, setFormData] = React.useState(props.costume);
 
   //FUNCTIONS
   const handleSubmit = (event) => {
@@ -16,7 +17,7 @@ const Form = (props) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit}>
       <input
         type="text"
         name="name"
@@ -25,8 +26,8 @@ const Form = (props) => {
       />
       <input
         type="number"
-        name="age"
-        value={formData.age}
+        name="price"
+        value={formData.price}
         onChange={handleChange}
       />
       <input
@@ -36,8 +37,8 @@ const Form = (props) => {
         onChange={handleChange}
       />
       <input type="submit" value={props.label} />
-    </form>
+    </Form>
   );
 };
 
-export default Form;
+export default FormOne;

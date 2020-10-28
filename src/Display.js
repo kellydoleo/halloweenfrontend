@@ -2,8 +2,8 @@ import React from "react";
 
 const Display = (props) => {
   const {costumes} = props
-  return (
-  // const loaded = () => (
+  
+  const loaded = () => (
     <div style={{textAlign: 'center'}}>
       {costumes.map((costume) => (
         <article key={costume._id}>
@@ -22,9 +22,9 @@ const Display = (props) => {
     </div>
   )
 
-  // const loading = <h1>Loading...</h1>
+   const loading = <h1>Loading...</h1>
 
-  // return costumes.length > 0 ? loaded(): loading
+   return costumes.length > 0 ? loaded(): loading
 };
 
 export default Display;
