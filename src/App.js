@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { Route, Link, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Display from "./Display";
 import FormOne from "./Form";
 
@@ -59,7 +59,7 @@ const handleCreate = (newCostume) => {
 }
 //handleUpdate function for Edit
 const handleUpdate = (costume) => {
-  fetch(url + "/costues/" + costume._id, {
+  fetch(url + "/costumes/" + costume._id, {
     method: "put",
     headers: {
       "Content-Type": "application/json"
@@ -71,27 +71,25 @@ const selectCostume = (costume) => {
   setSelectedCostume(costume);
 }
 
-// const deleteDog = (dog) => {
-//   fetch(url + '/dog/' + dog._id, {
-//     method: 'delete'
-//   }).then(respnse => getDogs())
-// }
+const deleteCostume = (costume) => {
+  fetch(url + '/costumes/' + costume._id, {
+    method: 'delete'
+  }).then(respnse => getCostumes())
+}
 
   return (
     <div className="App">
       <h1>HALLOWEEN COSTUMES</h1>
        <hr />
 
-       <Link to="/create">
-         <button>Add Costume</button>
-       </Link>
+       
        <main>
          <Switch>
           <Route exact path="/" render={ (rp) => 
             <Display 
               costumes = {state} 
-              // selectDog={selectDog}{...rp} 
-              // deleteDog={deleteDog}
+              selectCostume={selectCostume}{...rp} 
+              deleteCostume={deleteCostume}
             />} 
           />
            <Route

@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap'
+import { Form, InputGroupAddon, Label, Input, InputGroupText } from 'reactstrap'
 
 const FormOne = (props) => {
   //STATE FOR THE FORM
@@ -18,19 +18,24 @@ const FormOne = (props) => {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <input
+        <Label for='addCostume'>Add Costume</Label>
+      <Input
         type="text"
         name="name"
         value={formData.name}
         onChange={handleChange}
       />
-      <input
+      <InputGroupAddon addonType="prepend">
+        <InputGroupText>$</InputGroupText>
+        <InputGroupText>$</InputGroupText>
+      <Input
         type="number"
         name="price"
         value={formData.price}
         onChange={handleChange}
       />
-      <input
+      </InputGroupAddon>
+      <Input
         type="text"
         name="img"
         value={formData.img}
