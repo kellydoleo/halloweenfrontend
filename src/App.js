@@ -3,6 +3,8 @@ import "./App.css";
 import { Route, Link, Switch } from "react-router-dom";
 import Display from "./Display";
 import FormOne from "./Form";
+import Candy from './Candy'
+import Party from './Party'
 import { Button } from 'reactstrap'
 
 
@@ -12,12 +14,19 @@ function App() {
   console.log('Current Base URL:', url);
 
 
-  //state to hold API  
+  //state to hold costume API  
    const [state, setState] = React.useState({
     costumes: []
   })
+//State to hold candy API
+  const [candy, setCandy] = React.useState({
+    candy: []
+  })
 
-
+//state to hold party API
+  const [party, setParty] = React.useState({
+    parties: []
+})
 
   // Function to get dogs via API
   const getCostumes = () => {
@@ -29,9 +38,29 @@ function App() {
     })
   }
 
+  const getCandy = () => {
+    fetch(url + "/candy")
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+      setCandy(data)
+    })
+  }
+
+  const getParty = () => {
+    fetch(url + "/party")
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+      setParty(data)
+    })
+  }
+
   //useEffect to do initial call
   React.useEffect(() => {
     getCostumes()
+    getCandy()
+    getParty()
     // console.log(state)
   }, [])
 
@@ -82,15 +111,19 @@ const deleteCostume = (costume) => {
     <div className="App flex" >
       <header className='topBar'>
         <div>
-          <h1 className='logo'>SPIRIT</h1>
+          <Link to="/"><h1 className='logo'>SPIRIT</h1></Link>
           <h4>Halloween Costume Ideas</h4>
         </div>
         <div>
           <Link to="/create">
-          <Button style={{backgroundColor: '#FF9A00', border: 'none', margin: '5px', width: '130px' }} >Add Costume</Button>
+            <Button style={{backgroundColor: '#FF9A00', border: 'none', margin: '5px', width: '130px' }} >Add Costume</Button>
           </Link>
-          <Button style={{backgroundColor: '#FF9A00', border: 'none', margin: '5px', width: '130px' }} >Get Party Ideas</Button>
-          <Button style={{backgroundColor: '#FF9A00', border: 'none', margin: '5px', width: '130px' }} >Get Candy Ideas</Button>
+          <Link to='/party'>
+            <Button style={{backgroundColor: '#FF9A00', border: 'none', margin: '5px', width: '130px' }} >Get Party Ideas</Button>
+          </Link>
+          <Link to="/candy">
+            <Button style={{backgroundColor: '#FF9A00', border: 'none', margin: '5px', width: '130px' }} >Get Candy Ideas</Button>
+          </Link>
         </div>
       </header>
       
@@ -121,6 +154,18 @@ const deleteCostume = (costume) => {
               <FormOne {...rp} label="update" costume={selectedCostume} handleSubmit={handleUpdate} />
             )}
           />
+          <Route
+            exact path='/candy'
+            render={(rp) => (
+              <Candy {...rp} candy={candy}/>
+            )}
+            />
+            <Route
+            exact path='/party'
+            render={(rp) => (
+              <Party {...rp} parties={party}/>
+            )}
+            />
         </Switch> 
       </main>
      </div>
