@@ -36,3 +36,51 @@
     transform: rotate(360deg);
   }
 }
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.topBar {
+  background-color: black;
+  height: 120px;
+  padding: 20px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo, h4 {
+  color: #F75F1C;
+  font-family: 'Henny Penny', cursive;
+  font-size: 42px;
+  text-align: left;
+  width: 100%;
+}
+
+h4 {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.crop {
+  height: 200px;
+  width: 200px;
+  overflow: hidden;
+}
+
+.image {
+height: auto;
+width: 200px;
+}
+
+.card {
+  max-width: 30%;
+}
+
+main {
+  background-color: #85E21F;
+}
+
+
