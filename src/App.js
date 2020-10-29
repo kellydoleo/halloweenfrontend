@@ -79,15 +79,26 @@ const deleteCostume = (costume) => {
 }
 
   return (
-    <div className="App">
-      <h1>HALLOWEEN COSTUMES</h1>
-       <hr />
+    <div className="App flex" >
+      <header className='topBar'>
+        <div>
+          <h1 className='logo'>SPIRIT</h1>
+          <h4>Halloween Costume Ideas</h4>
+        </div>
+        <div>
+          <Link to="/create">
+          <Button style={{backgroundColor: '#FF9A00', border: 'none', margin: '5px', width: '130px' }} >Add Costume</Button>
+          </Link>
+          <Button style={{backgroundColor: '#FF9A00', border: 'none', margin: '5px', width: '130px' }} >Get Party Ideas</Button>
+          <Button style={{backgroundColor: '#FF9A00', border: 'none', margin: '5px', width: '130px' }} >Get Candy Ideas</Button>
+        </div>
+      </header>
+      
+      {/* <hr /> */}
 
        
        <main>
-       <Link to="/create">
-         <Button>Add Costume</Button>
-       </Link>
+       
          <Switch>
           <Route exact path="/" render={ (rp) => 
             <Display 
