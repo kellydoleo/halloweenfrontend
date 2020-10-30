@@ -17,31 +17,35 @@ const FormOne = (props) => {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
-        <Label for='addCostume'>Add Costume</Label>
-      <Input
+    <Form onSubmit={handleSubmit} className='formInputs'>
+      <Label className='label' for='addCostume' >Add Costume</Label>
+      <Input style={{ backgroundColor: 'white', borderColor: '#333', margin: '10px', paddingTop: '5px', paddingBottom: '5px', width: '400px'}}
         type="text"
         name="name"
+        placeholder='Enter Costume Name'
         value={formData.name}
         onChange={handleChange}
       />
-      <InputGroupAddon addonType="prepend">
-        <InputGroupText>$</InputGroupText>
-        <InputGroupText>$</InputGroupText>
-      <Input
-        type="number"
+      {/* <InputGroupAddon addonType="prepend"> */}
+        {/* <InputGroupText>$</InputGroupText> */}
+        {/* Below line is creating a dublicate $ on the page */}
+        {/* <InputGroupText>$</InputGroupText> */}
+      <Input style={{ backgroundColor: 'white', borderColor: '#333', margin: '10px', paddingTop: '5px', paddingBottom: '5px', width: '400px'}}
+        type="text"
         name="price"
-        value={formData.price}
+        placeholder='Enter Price'
+        value={formData.price !== 0 ? `$ ${formData.price}` : null}
         onChange={handleChange}
       />
-      </InputGroupAddon>
-      <Input
+      {/* </InputGroupAddon> */}
+      <Input className='inputForm' style={{ backgroundColor: 'white', borderColor: '#333', margin: '10px', paddingTop: '5px', paddingBottom: '5px', width: '400px'}}
+        placeholder='Enter Image Address'
         type="text"
         name="img"
         value={formData.img}
         onChange={handleChange}
       />
-      <input type="submit" value={props.label} />
+      <input type="submit" value={props.label} className='submitButton'/>
     </Form>
   );
 };

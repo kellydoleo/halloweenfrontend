@@ -71,8 +71,8 @@ h4 {
 }
 
 .image {
-height: auto;
-width: 200px;
+  height: auto;
+  width: 200px;
 }
 
 .card {
@@ -81,6 +81,26 @@ width: 200px;
 
 main {
   background-color: #85E21F;
+  min-height: 1200px;
 }
 
+.formInputs {
+  display: flex;
+  flex-direction: column;
+}
 
+.label {
+  background-color: #85E21F;
+  text-align: left;
+  margin: 20px 12px 5px 12px;
+}
+
+.submitButton {
+  width: 200px;
+  margin: 20px 12px 5px 12px;
+}
+
+.image2 {
+  height: 200px;
+  width: auto;
+}
