@@ -16,7 +16,7 @@ const FormOne = (props) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
-  return (
+  return(
     <Form onSubmit={handleSubmit} className='formInputs'>
       <Label className='label' for='addCostume' >Add Costume</Label>
       <Input style={{ backgroundColor: 'white', borderColor: '#333', margin: '10px', paddingTop: '5px', paddingBottom: '5px', width: '400px'}}

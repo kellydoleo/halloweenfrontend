@@ -111,7 +111,7 @@ const deleteCostume = (costume) => {
 
 
 
-  return (
+  return(
     <div className="App flex" >
       <header className='topBar'>
         <div>

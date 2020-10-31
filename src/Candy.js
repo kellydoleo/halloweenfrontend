@@ -20,7 +20,7 @@ const Candy = (props) => {
 
     const loading = <h1>...Loading</h1> 
 
-    return candy.length > 0 ? loaded(): loading
+    return(candy.length > 0 ? loaded(): loading)
 
 }
 
