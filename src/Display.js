@@ -15,7 +15,7 @@ const Display = (props) => {
             <CardImg className="image" src={costume.img}/>
           </div>
           <CardBody>
-          <CardTitle style={{color: 'black'}} tag='h1'><a href={`/costumes/${costume._id}`}> {costume.name}</a> </CardTitle>
+          <CardTitle style={{color: 'black'}} tag='h1'> {costume.name} </CardTitle>
           <h3 style={{color: 'black'}} >Cost: ${costume.price}</h3>
           <Button style={{backgroundColor: 'black', border: 'none', margin: '5px', width: '70px' }} onClick ={() => {
             props.selectCostume(costume)

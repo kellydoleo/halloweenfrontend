@@ -1,7 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 //App deployed to sites
-backend: https://zenproject3backend.herokuapp.com/
-frontend: https://app.netlify.com/sites/eager-ritchie-6ca558/overview
+backend: https://halloweenbackend.herokuapp.com/costumes
+frontend: 
 
 ## Available Scripts
 
