@@ -5,12 +5,13 @@ import Display from "./Display";
 import FormOne from "./Form";
 import Candy from './Candy'
 import Party from './Party'
+
 import { Button } from 'reactstrap'
 
 
 function App() {
   //   //URL Variable - NEEDS TO BE UPDATED
-  const url = "http://localhost:3003"  //Update to a herokuapp.com
+  const url = "https://halloweenbackend.herokuapp.com"  //Update to a herokuapp.com
   console.log('Current Base URL:', url);
 
 
@@ -104,8 +105,11 @@ const selectCostume = (costume) => {
 const deleteCostume = (costume) => {
   fetch(url + '/costumes/' + costume._id, {
     method: 'delete'
-  }).then(respnse => getCostumes())
+  }).then(response => getCostumes())
 }
+
+
+
 
   return (
     <div className="App flex" >
@@ -166,10 +170,15 @@ const deleteCostume = (costume) => {
               <Party {...rp} parties={party}/>
             )}
             />
+
+          
+
+
+            
         </Switch> 
       </main>
      </div>
   );
-}
 
+            }
 export default App;
