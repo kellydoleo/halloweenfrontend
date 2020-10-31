@@ -9,7 +9,7 @@ const Display = (props) => {
     // <div style={{textAlign: 'center', display: 'inline-flex'}}>
     <div style={{textAlign: 'center', display: 'flex', flexWrap: 'wrap'}}>
       {costumes.map((costume) => (
-        <Card body inverse style={{ backgroundColor: 'white', borderColor: '#333', margin: '10px', paddingTop: '5px', paddingBottom: '5px'}}>
+        <Card body inverse style={{ backgroundColor: 'white', borderColor: '#333', margin: '10px', paddingTop: '5px', paddingBottom: '5px'}} key={costume._id}>
         <article key={costume._id}>
           <div className='crop'>
             <CardImg className="image" src={costume.img}/>
