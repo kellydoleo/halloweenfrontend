@@ -5,7 +5,7 @@ import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } fr
 const Display = (props) => {
   const {costumes} = props
   
-  const loaded = () => (
+  const loaded = () => {
     // <div style={{textAlign: 'center', display: 'inline-flex'}}>
     <div style={{textAlign: 'center', display: 'flex', flexWrap: 'wrap'}}>
       {costumes.map((costume) => (
@@ -29,7 +29,7 @@ const Display = (props) => {
         </Card>
       ))}
     </div>
-  )
+  }
 
    const loading = <h1>Loading...</h1>
 
