@@ -5,8 +5,8 @@ import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } fr
 const Display = (props) => {
   const {costumes} = props
   
-  const loaded = () => {
-    // <div style={{textAlign: 'center', display: 'inline-flex'}}>
+  const loaded = () => (
+ 
     <div style={{textAlign: 'center', display: 'flex', flexWrap: 'wrap'}}>
       {costumes.map((costume) => (
         <Card body inverse style={{ backgroundColor: 'white', borderColor: '#333', margin: '10px', paddingTop: '5px', paddingBottom: '5px'}} key={costume._id}>
@@ -29,11 +29,12 @@ const Display = (props) => {
         </Card>
       ))}
     </div>
-  }
+  )
 
    const loading = <h1>Loading...</h1>
 
-   return(costumes.length > 0 ? loaded(): loading)
+   return (
+     costumes.length > 0 ? loaded(): loading)
 };
 
 export default Display;

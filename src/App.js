@@ -111,7 +111,7 @@ const deleteCostume = (costume) => {
 
 
 
-  return(
+  return (
     <div className="App flex" >
       <header className='topBar'>
         <div>
@@ -137,13 +137,15 @@ const deleteCostume = (costume) => {
        <main>
        
          <Switch>
-          <Route exact path="/" render={ (rp) => 
+          <Route exact path="/" render={ (rp) => (
             <Display 
               costumes = {state} 
               selectCostume={selectCostume}{...rp} 
               deleteCostume={deleteCostume}
-            />} 
+            />)} 
           />
+
+
            <Route
             exact
             path="/create"
@@ -151,6 +153,8 @@ const deleteCostume = (costume) => {
               <FormOne {...rp} label="create" costume={emptyCostume} handleSubmit={handleCreate} />
             )}
           />
+
+
           <Route
             exact
             path="/edit"
@@ -158,27 +162,25 @@ const deleteCostume = (costume) => {
               <FormOne {...rp} label="update" costume={selectedCostume} handleSubmit={handleUpdate} />
             )}
           />
+
+
           <Route
             exact path='/candy'
             render={(rp) => (
               <Candy {...rp} candy={candy}/>
             )}
             />
+
             <Route
             exact path='/party'
             render={(rp) => (
               <Party {...rp} parties={party}/>
             )}
             />
-
-          
-
-
             
         </Switch> 
       </main>
      </div>
-  );
-
-            }
+  )
+}
 export default App;
